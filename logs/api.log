@@ -1,7 +1,0 @@
-::ffff:127.0.0.1 - - [21/Aug/2024:11:52:14 +0000] "PUT /book/edit/66c5d4899e9d17739295566d HTTP/1.1" 201 237 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [21/Aug/2024:11:52:47 +0000] "GET /book/view/66c5d4899e9d17739295566d HTTP/1.1" 201 235 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [21/Aug/2024:11:53:16 +0000] "DELETE /book/delete/66c5d4899e9d17739295566d HTTP/1.1" 201 237 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [21/Aug/2024:11:54:00 +0000] "POST /user/login HTTP/1.1" 201 163 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [21/Aug/2024:11:54:25 +0000] "GET /book/ HTTP/1.1" 201 1881 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [21/Aug/2024:11:55:27 +0000] "POST /book/create HTTP/1.1" 201 200 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [21/Aug/2024:11:56:07 +0000] "POST /book/create HTTP/1.1" 501 53 "-" "Thunder Client (https://www.thunderclient.com)"
