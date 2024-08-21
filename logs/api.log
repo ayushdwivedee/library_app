@@ -1,2 +1,0 @@
-::ffff:127.0.0.1 - - [14/Aug/2024:10:22:59 +0000] "POST /user/login HTTP/1.1" 201 163 "-" "Thunder Client (https://www.thunderclient.com)"
-::ffff:127.0.0.1 - - [14/Aug/2024:10:26:14 +0000] "POST /user/login HTTP/1.1" 201 163 "-" "Thunder Client (https://www.thunderclient.com)"

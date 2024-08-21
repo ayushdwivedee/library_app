@@ -7,19 +7,25 @@ const path = require("path");
 const connectToDB = require("./config");
 const userRouter = require("./routes/user.route");
 const bookRouter = require("./routes/book.route");
+ 
+ 
+
 dotenv.config();
 const port = process.env.PORT;
 
-// console.log({ flags: "a" })
-
 const logStream = fs.createWriteStream(
-  path.join(__dirname, "logs", "api.log"),
-  { flags: "a" }
+  path.join(__dirname, "logs", "api.log")
+   
 );
 server.use(morgan("combined", { stream: logStream }));
 server.use(express.json());
 server.use("/user", userRouter);
-server.use("/books",bookRouter)
+server.use("/book", bookRouter);
+
+server.get("/",(req, res) => {
+  res.status(200).json({ msg: "Server is running fine" });
+});
+
 server.listen(port, async () => {
   try {
     await connectToDB();

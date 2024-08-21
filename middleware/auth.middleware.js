@@ -16,8 +16,10 @@ const auth = (req, res, next) => {
           });
         }
         if (decoded) {
-          const userEmail = decoded.email;
-          const user = await userModel.findOne({ userEmail });
+          
+          const username = decoded.name;
+          const user = await userModel.findOne({ name:username });
+          
           if (!user) {
             return res.status(401).json({
               msg: ` User Not found `,
@@ -32,3 +34,5 @@ const auth = (req, res, next) => {
     console.log(`Error occured in auth middleware ${error}`);
   }
 };
+
+module.exports=auth
