@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const connectToDB = require("./config");
 const userRouter = require("./routes/user.route");
+const bookRouter = require("./routes/book.route");
 dotenv.config();
 const port = process.env.PORT;
 
@@ -18,6 +19,7 @@ const logStream = fs.createWriteStream(
 server.use(morgan("combined", { stream: logStream }));
 server.use(express.json());
 server.use("/user", userRouter);
+server.use("/books",bookRouter)
 server.listen(port, async () => {
   try {
     await connectToDB();
