@@ -19,7 +19,7 @@ server.use("/user", userRouter);
 server.use("/book", bookRouter);
 server.use(
   cors({
-    origin: "*",
+    origin: "*"
   })
 );
 server.get("/", (req, res) => {
