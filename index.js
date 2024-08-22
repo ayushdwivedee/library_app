@@ -7,22 +7,22 @@ const path = require("path");
 const connectToDB = require("./config");
 const userRouter = require("./routes/user.route");
 const bookRouter = require("./routes/book.route");
- 
- 
+const cors = require("cors");
 
 dotenv.config();
 const port = process.env.PORT;
 
-const logStream = fs.createWriteStream(
-  path.join(__dirname, "logs", "api.log")
-   
-);
+const logStream = fs.createWriteStream(path.join(__dirname, "logs", "api.log"));
 server.use(morgan("combined", { stream: logStream }));
 server.use(express.json());
 server.use("/user", userRouter);
 server.use("/book", bookRouter);
-
-server.get("/",(req, res) => {
+server.use(
+  cors({
+    origin: "*",
+  })
+);
+server.get("/", (req, res) => {
   res.status(200).json({ msg: "Server is running fine" });
 });
 
