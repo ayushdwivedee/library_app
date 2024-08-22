@@ -13,15 +13,17 @@ dotenv.config();
 const port = process.env.PORT;
 
 const logStream = fs.createWriteStream(path.join(__dirname, "logs", "api.log"));
+server.use(
+  cors({
+    origin: "*",
+  })
+);
 server.use(morgan("combined", { stream: logStream }));
+
 server.use(express.json());
 server.use("/user", userRouter);
 server.use("/book", bookRouter);
-server.use(
-  cors({
-    origin: "*"
-  })
-);
+
 server.get("/", (req, res) => {
   res.status(200).json({ msg: "Server is running fine" });
 });
